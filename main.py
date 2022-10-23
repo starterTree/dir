@@ -15,6 +15,19 @@ from prompt_toolkit.styles import Style
 
 # voir toute la commane qui va etre executé
 
+demoDataYaml="""
+dir_demo_data:
+  cmd:
+    ls:
+      cmd: ls
+    coco:
+      cmd: echo "coco"
+      prompt: yes
+demo_data:
+  dir_demo_data:
+    cmd:
+      cmd: ls
+"""
 
 
 def preview(args):
@@ -128,4 +141,4 @@ def register(args):
 
 import Plugin
 
-plugin = Plugin.Plugin(namePlugin="dir", icon=" ", customRegister=register, getCustomContentForRprompt=getContentForRprompt, titleIcon="", options=["debug"])
+plugin = Plugin.Plugin(namePlugin="dir", icon=" ", customRegister=register, getCustomContentForRprompt=getContentForRprompt, titleIcon="", options=["debug"], demoDataYaml=demoDataYaml)
